@@ -279,4 +279,5 @@
     </div>
     <!-- end row -->
   </div>
-</div> @endsection
+</div> 
+@endsection

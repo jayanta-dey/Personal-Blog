@@ -42,7 +42,16 @@
     
     <form class="form-horizontal mt-3"  method="POST" action="{{ route('login') }}">
     @csrf
-
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                     @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach                   
+                </ul>
+                
+            </div>
+        @endif
         <div class="form-group mb-3 row">
             <div class="col-12">
                 <input class="form-control" type="text" required="" placeholder="Username" id="username" name="username">

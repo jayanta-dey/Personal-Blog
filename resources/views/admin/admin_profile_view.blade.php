@@ -19,7 +19,7 @@
                                         <hr>
                                         <h4 class="card-title">Username : {{$admindata->username}}</h4>
                                         <hr>
-                                        <a href="" class="btn btn-primary">Edit Profile</a>
+                                        <a href="{{route('edit.profile')}}" class="btn btn-primary">Edit Profile</a>
                                            
                                     </div>
                                 </div>

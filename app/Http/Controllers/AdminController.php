@@ -43,7 +43,14 @@ class AdminController extends Controller
        
 
     } //end method profile
-    
+    public function storeprofile()
+    {
+        $id = Auth::id();
+        $admindata = User::find($id);
+       
+       
+
+    } //end method profile
 
 
 

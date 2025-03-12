@@ -13,7 +13,8 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-            <form>
+            <form method="post" action="{{route('profile.store')}} "enctype="multipart/from-data">
+                @csrf
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
@@ -44,7 +45,7 @@
             </div>
             <div>
                 <label for="example-text-input" class="col-sm-2 col-form-label"></label>
-                <img id="showImage" class="rounded avatar-lg" src="{{asset('backend/assets/images/small/img-5.jpg')}}" alt="Card image cap">
+                <img id="showImage" class="rounded avatar-lg"  alt="Card image cap">
             </div>
            
             </div>
@@ -73,8 +74,6 @@
             }
             reader.readAsDataURL(e.target.files['0']);
         });
-
-
 
 
     })

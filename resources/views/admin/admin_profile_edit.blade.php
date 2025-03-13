@@ -13,7 +13,7 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-            <form method="post" action="{{route('profile.store')}} "enctype="multipart/from-data">
+            <form method="post" action="{{route('profile.store')}} "enctype="multipart/form-data">
                 @csrf
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
@@ -74,7 +74,6 @@
             }
             reader.readAsDataURL(e.target.files['0']);
         });
-
 
     })
    </script>

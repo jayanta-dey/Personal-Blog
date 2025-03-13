@@ -4,7 +4,7 @@
 <div class="page-content">
 <div class="container-fluid">
 <div class="row">
-<div class="col-lg-6">
+<div class="col-lg-4">
 <div class="card">
     <center>
     <br><br>

@@ -21,7 +21,12 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        $notification = array(
+            'message' => 'Logout Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/login')->with($notification);
     } //end method destroy
 
 
@@ -61,7 +66,7 @@ class AdminController extends Controller
 
         }
         $admindata->save();
-        
+
         $notification = array(
             'message' => 'Admin Profile Updated Successfully',
             'alert-type' => 'success'

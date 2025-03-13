@@ -1,3 +1,12 @@
+<?php
+ $id = Auth::id();
+ $admindata = App\Models\User::find($id);
+
+
+?>
+
+
+
 <header id="page-topbar">
                 <div class="navbar-header">
                     <div class="d-flex">
@@ -41,9 +50,9 @@
                         <div class="dropdown d-inline-block user-dropdown">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{asset('backend/assets/images/users/avatar-1.jpg')}}"
+                                <img class="rounded-circle header-profile-user" src="{{(!empty($admindata->profile_image))? url('upload/admin_images/'.$admindata->profile_image): url('upload/no_image.jpg')}}"
                                     alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1">Julia</span>
+                                <span class="d-none d-xl-inline-block ms-1">{{$admindata->name}}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">

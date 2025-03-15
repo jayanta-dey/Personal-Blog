@@ -9,6 +9,7 @@
 <div class="page-content">
 <div class="container-fluid">
 <div class="row">
+   
 <center>
 <div class="col-6">
     <div class="card">

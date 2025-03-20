@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash; 
 
 
 
@@ -82,6 +82,26 @@ class AdminController extends Controller
     } //end method ChangePassword
 
 
+    public function UpdatePassword(Request $request)
+    {
+        $validateData = $request->validate([
+            'currentpassword' => 'required',
+            'newpassword' => 'required',
+            'confirmnewpassword' => 'required|same:newpassword',
+        ]);
+    $hashedPassword = Auth::user()->password;
+       if(Hash::check($request->currentpassword, $hashedPassword)){
+        $users = User::find(Auth::id());
+        $users->password = Hash::make($request->newpassword);
+        $users->save();
 
+        session()->flash('message', 'Password Updated Successfully');
+        return redirect()->back();
+         }else{
+            session()->flash('message', 'Current Password is Invalid');
+            return redirect()->back(); 
+
+       }
+    } //end method UpdatePassword
 
 }

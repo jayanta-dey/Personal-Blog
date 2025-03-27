@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\HomeSliderController;
+
+
 
 Route::get('/', function () {
     return view('frontend.index');
@@ -19,6 +22,13 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('admin/change/password','ChangePassword')->name('change.password');
     Route::post('admin/update/password','UpdatePassword')->name('update.password');
   
+});
+
+// Home Slide Bar Routes
+Route::controller(HomeSliderController::class)->group(function () {
+    Route::get('home/slide','HomeSlider')->name('home.slide');
+    Route::post('update/slide','UpdateSlider')->name('update.slider');
+    
 });
 
 

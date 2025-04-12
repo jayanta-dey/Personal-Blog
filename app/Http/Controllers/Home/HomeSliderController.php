@@ -28,7 +28,6 @@ class HomeSliderController extends Controller
             $name_gen = hexdec(uniqid()) .'.'. $image->getClientOriginalExtension();
             $img = $manager ->read ($request->file('home_slide'));
             $img = $img->resize(636,852);
-           // $image->move(public_path('upload/home_slide_image'), $name_gen);
             $img->toJpeg(80)->save(base_path('public/upload/home_slide_image/'.$name_gen));
             $save = 'upload/home_slide_image/' . $name_gen;
 

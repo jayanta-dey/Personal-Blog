@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\Home\HomeAboutController;
+
 
 
 
@@ -30,6 +32,15 @@ Route::controller(HomeSliderController::class)->group(function () {
     Route::post('update/slide','UpdateSlider')->name('update.slider');
     
 });
+
+// About Page Routes
+Route::controller(HomeAboutController::class)->group(function () {
+    Route::get('home/about','HomeAbout')->name('about.page');
+    Route::post('update/about','AboutUpdate')->name('about.update');
+    
+});
+
+
 
 
 Route::get('/dashboard', function () {

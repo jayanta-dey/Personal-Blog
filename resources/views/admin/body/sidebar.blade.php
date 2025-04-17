@@ -51,7 +51,10 @@
             <li><a href="{{route('about.page')}}">About Page</a></li>
         </ul>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{route('about.multi.image')}}">Add Multi Image</a></li>
+            <li><a href="{{route('about.multi.image')}}">Add Multi Images</a></li>
+        </ul>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{route('all.multi.images')}}">All Multi Images</a></li>
         </ul>
     </li>
         <li>

@@ -12,21 +12,18 @@
     <div class="card">
         <div class="card-body">
             <h4> Add Multi Images</h4> <br><br>
-            <form method="post" action="#" enctype="multipart/form-data">
+            <form method="post" action="{{route('add.multi.image')}}" enctype="multipart/form-data" >
                 @csrf
                 <input type="hidden" name="id" value="">
-           
-
-            <div class="row mb-3">
+                <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Add Images</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="file"  id="image" name="multi_image">
+                    <input class="form-control" type="file"  id="image" name="multi_image[]" multiple="">
                 </div>
             </div>
             <div>
                 <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                 <img id="showImage" class="rounded avatar-lg" 
-      
                 alt="Card image cap">
             </div>
            

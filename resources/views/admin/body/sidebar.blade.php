@@ -1,12 +1,24 @@
+
+@php
+
+$id = Auth::id();
+$admindata = App\Models\User::find($id);
+
+
+@endphp
+
+
 <div data-simplebar class="h-100">
 
 <!-- User details -->
 <div class="user-profile text-center mt-3">
     <div class="">
-        <img src="{{asset('backend/assets/images/users/avatar-1.jpg')}}" alt="" class="avatar-md rounded-circle">
+    <img class="rounded avatar-lg" 
+    src="{{(!empty($admindata->profile_image))? url('upload/admin_images/'.$admindata->profile_image): url('upload/no_image.jpg')}}" alt="Card image cap">
+   
     </div>
     <div class="mt-3">
-        <h4 class="font-size-16 mb-1">Julia Hudda</h4>
+        <h4 class="font-size-16 mb-1">{{$admindata->name}}</h4>
         <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
     </div>
 </div>
@@ -57,6 +69,20 @@
             <li><a href="{{route('all.multi.images')}}">All Multi Images</a></li>
         </ul>
     </li>
+
+    <li>
+        <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="ri-mail-send-line"></i>
+            <span>Portfolio Page Setup</span>
+        </a>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{route('all.portfolio')}}"> All Portfolio</a></li>
+        </ul>
+        <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{route('add.portfolio')}}">Add Portfolio</a></li>
+        </ul>
+    </li>
+
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="ri-layout-3-line"></i>

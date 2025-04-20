@@ -18,7 +18,7 @@ $admindata = App\Models\User::find($id);
    
     </div>
     <div class="mt-3">
-        <h4 class="font-size-16 mb-1">{{$admindata->name}}</h4>
+        <h4 class="font-size-16 mb-1">{{$admindata->name}}({{$admindata->username}})</h4>
         <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
     </div>
 </div>

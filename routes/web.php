@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\HomeAboutController;
+use App\Http\Controllers\Home\PortfolioController;
 
 
 
@@ -46,8 +47,8 @@ Route::controller(HomeAboutController::class)->group(function () {
 });
 
 // Portfolio Page Routes
-Route::controller(HomeAboutController::class)->group(function () {
-    Route::post('/portfolio/all','AllPortfolio')->name('all.portfolio');
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('/portfolio/all','AllPortfolio')->name('all.portfolio');
     Route::post('/portfolio/add','AddPortfolio')->name('add.portfolio');
 
 });

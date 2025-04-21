@@ -51,7 +51,7 @@
                                 <td>{{$i++}}</td>
                                 <td>{{$item->portfolio_name}}</td>
                                 <td>{{$item->portfolio_title}}</td>
-                                <td><img src = "{{asset($item->$item)}}" style="width: 100px; height: auto;"></td>
+                                <td><img src = "{{asset($item->portfolio_image)}}" style="width: 100px; height: auto;"></td>
                                 <td> <a href ="" class="btn btn-info sm" title="Edit">  <i class="ri-edit-box-line"></i> </a>
                                 <a href ="" class="btn btn-danger sm" title="Delete">  <i class="ri-delete-bin-5-line"></i> </a> </td>
                               

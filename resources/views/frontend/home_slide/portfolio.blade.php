@@ -1,3 +1,11 @@
+@php
+
+$portfolios = App\Models\Portfolio::latest()->get();
+
+@endphp
+
+
+
 <section class="portfolio">
 <div class="container">
     <div class="row justify-content-center">
@@ -14,19 +22,24 @@
         <div class="container">
             <div class="row gx-0 justify-content-center">
                 <div class="col">
+
+                @foreach ($portfolios as $portfolio)
                     <div class="portfolio__active">
                         <div class="portfolio__item">
                             <div class="portfolio__thumb">
-                                <img src="{{asset('frontend/assets/img/portfolio/portfolio_img02.jpg')}}" alt="">
+
+                                <img src="{{asset($portfolio->portfolio_image)}}" alt="">
                             </div>
                             <div class="portfolio__overlay__content">
-                                <span>Web Design</span>
-                                <h4 class="title"><a href="portfolio-details.html">Graphic Design Management System</a></h4>
+                                <span>{{$portfolio->portfolio_name}}</span>
+                                <h4 class="title"><a href="portfolio-details.html">{{$portfolio->portfolio_title}}</a></h4>
                                 <a href="portfolio-details.html" class="link">Case Study</a>
                             </div>
                         </div>
+
+                        @endforeach
                        
-                    </div>
+                    </div>                                                                                                                                                                                                                                                                                                                                         
                 </div>
             </div>
         </div>

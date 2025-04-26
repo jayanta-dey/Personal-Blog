@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">About Multi Images</h4>
+                        <h4 class="card-title">About Blog Pages</h4>
                 
 
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -48,6 +48,8 @@
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$item->blog_category_name}}</td>
+                                <td> <a href ="" class="btn btn-info sm" title="Edit">  <i class="ri-edit-box-line"></i> </a>
+                                <a href ="" class="btn btn-danger sm" title="Delete">  <i class="ri-delete-bin-5-line"></i> </a> </td>
                             </tr>
                             @endforeach
                             </tbody>
